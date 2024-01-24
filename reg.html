@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Registration Form</title>
+  <style>
+    
+    *{
+        /* background-image: url("logo\ for\ website.png"); */
+        z-index: -10px;
+    }
+    /* Center the form in a border box */
+    .form-box {
+      width: 40%;
+      margin-top: 11rem;
+      margin-left: 23rem;
+      border: 5px solid black ;
+      padding: 20px;
+      text-align: center;
+    }
+    /* Style the input fields and submit button */
+    input[type=text], input[type=email], input[type=password] {
+      width: 70%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4CAF50;
+      color: rgb(37, 11, 11);
+      padding: 14px 20px;
+      margin: 8px ;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover{
+      background-color:darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h1><b> Customer Registration</b></h1>
+    <form id="registration-form">
+      <label for="name"><b>Name:</b></label>
+      <input type="text" id="name" name="name" required><br>
+
+      <label for="email"><b>Email:</b></label>
+      <input type="email" id="email" name="email" required><br>
+
+      <br><label for="gender"><b>Gender:</b></label>
+      <select id="gender" name="gender">
+        <option value="other">Other</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        
+      </select><br>
+
+     <br> <label for="place"><b>Place:</b></label>
+      <select id="place" name="place">
+        <option value="other">Alien</option>
+        <option value="uttarpradesh">Uttar Pradesh</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        <option value="tamilnadu">Tamil Nadu</option>
+        <option value="maharastra">Maharastra</option>
+        
+      </select><br>
+
+     <br> <label for="password"><b>Password:</b></label>
+      <input type="password" id="password" name="password" required>
+
+      <br><button type="submit"><b>Register</b></button>
+    </form>
+  </div>
+
+  <script>
+    const registrationForm = document.getElementById('registration-form');
+    const customerData = [];
+
+    registrationForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const gender = document.getElementById('gender').value;
+      const place = document.getElementById('place').value;
+
+      const customer = {
+        name,
+        email,
+        password,
+        gender,
+        place
+      };
+
+      customerData.push(customer);
+
+      console.log(customerData);
+
+       // Reset form
+  registrationForm.reset();
+
+// Alert user that registration was successful
+alert("Registration successful!");
+    });
+  </script>
+</body>
+</html>

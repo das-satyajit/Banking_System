@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customer Database Search</title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		th{
+            text-align: left;
+	        font-weight: bold ;
+            background-color:#0a0b3b;
+color:#fff;
+padding-top:2%;	
+}
+.container h1 {
+	font-family: 'Arvo', serif;
+	padding: auto;
+        
+        }
+         td {
+			text-align: left;
+			padding: 8px;
+			border: 1px solid #241515;
+		}
+
+		tr:hover {
+			background-color: #270d8c51;
+		}
+	</style>
+</head>
+<body>
+	<h1>Customer Database</h1>
+	<input type="text" id="searchInput" onkeyup="searchTable()" placeholder="Search for customers...">
+	<table id="customerTable">
+		<thead>
+			<tr >
+				<th>Customer ID</th>
+				<th>First Name</th>
+				<th>Place</th>
+				<th>Email</th>
+                <th>Gender</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr> 
+				<td>1</td>
+				<td>Mogli</td>
+				<td>Maharastra</td>
+				<td>mogli321@gmail.com</td>
+                <td>Male</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Jaggu</td>
+				<td>Manali</td>
+				<td>jaggu1@gmail.com</td>
+                <td>Male</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Bheem</td>
+				<td>Manali</td>
+				<td>bheem89@gmail.com</td>
+                <td>Male</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>Sheru</td>
+				<td>Manali</td>
+				<td>sheru45@gmail.com</td>
+                <td>Male</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>Jimjam</td>
+				<td>Tamilnadu</td>
+				<td>jimjam@gmail.com</td>
+                <td>Male</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>Tommy</td>
+				<td>Tamilnadu</td>
+				<td>tommy@gmail.com</td>
+                <td>Male</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>Unkil</td>
+				<td>Uttarakhand</td>
+				<td>unkil@gmail.com</td>
+                <td>Male</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>Matru</td>
+				<td>Alien</td>
+				<td>matru@gmail.com</td>
+                <td>Male</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>Chutki</td>
+				<td>Alien</td>
+				<td>chutki@gmail.com</td>
+                <td>Female</td>
+			</tr>
+			<tr> 
+				<td>10</td>
+				<td>Laura</td>
+				<td>Maharastra</td>
+				<td>laura@gmail.com</td>
+                <td>Female</td>
+			</tr>
+		</tbody>
+	</table>
+    <script>
+    function searchTable() {
+        // Declare variables
+        var input, filter, table, tr, td, i, j, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("customerTable");
+        tr = table.getElementsByTagName("tr");
+      
+        // Loop through all table rows, and hide those that don't match
+        for (i = 0; i < tr.length; i++) {
+          // Loop through all columns in the current row
+          for (j = 0; j < tr[i].cells.length; j++) {
+            td = tr[i].cells[j];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = ""; // Show the table row if it matches the search query
+                break; // Break out of the loop if the row is shown
+              } else {
+                tr[i].style.display = "none"; // Hide the table row if it does not match the search query
+              }
+            }
+          }
+        }
+      }
+    </script>
+	<!-- <script>
+
+        //this will fetch the row only when id is input :
+        
+		function searchTable() {
+			// Declare variables
+			var input, filter, table, tr, td, i, txtValue;
+			input = document.getElementById("searchInput");
+			filter = input.value.toUpperCase();
+			table = document.getElementById("customerTable");
+			tr = table.getElementsByTagName("tr");
+
+			// Loop through all table rows, and hide those that don't match
+			for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0]; // Search the first column (e.g. Customer ID)
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = ""; // Show the table row if it matches the search query
+      } else {
+        tr[i].style.display = "none"; // Hide the table row if it does not match the search query
+      }
+    }
+  }
+}
+</script> -->
+</body>
+</html>

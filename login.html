@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customer Login Form</title>
+  <style>
+    /* Center the form in a border box */
+    .form-box {
+      width: 40%;
+      margin-top: 11rem;
+      margin-left: 23rem;
+      border: 5px solid black;
+      padding: 20px;
+      text-align: center;
+    }
+    /* Style the input fields and submit button */
+    input[type=email], input[type=password] {
+      width: 70%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px ;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover{
+      background-color:darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Customer Login</h2>
+    <form id="login-form">
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required>
+
+      <br><label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" required>
+
+      <br><button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const customerData = [
+      // Sample customer data to use for login
+      {
+        name: 'Mogli',
+        email: 'mogli321@gmail.com',
+        password: 'password123',
+        gender: 'male',
+        place: 'Maharastra'
+      },
+      {
+        name: 'Jaggu',
+        email: 'jaggu1@gmail.com',
+        password: 'password456',
+        gender: 'male',
+        place: 'Manali'
+      },
+      {
+        name: 'Bheem',
+        email: 'bheem89@gmail.com',
+        password: 'password456',
+        gender: 'male',
+        place: 'Manali'
+      },
+      {
+        name: 'Sheru',
+        email: 'sheru45@gmail.com',
+        password: 'password456',
+        gender: 'male',
+        place: 'Manali'
+      },
+      {
+        name: 'Jimjam',
+        email: 'jimjam@gmail.com',
+        password: 'password456',
+        gender: 'male',
+        place: 'Tamilnadu'
+      },
+      {
+        name: 'Tommy',
+        email: 'tommy@gmail.com',
+        password: 'password456',
+        gender: 'male',
+        place: 'Tamilnadu'
+      },
+      {
+        name: 'Unkil',
+        email: 'unkil@gmail.com',
+        password: 'password456',
+        gender: 'male',
+        place: 'Uttarakhand'
+      },
+      {
+        name: 'Matru',
+        email: 'matru@gmail.com',
+        password: 'password456',
+        gender: 'male',
+        place: 'Alien'
+      },
+      {
+        name: 'Chutki',
+        email: 'chutki@gmail.com',
+        password: 'password456',
+        gender: 'female',
+        place: 'Alien'
+      },
+      {
+        name: 'Laura',
+        email: 'laura@gmail.com',
+        password: 'password456',
+        gender: 'female',
+        place: 'Maharastra'
+      }
+    ];
+
+    loginForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Check if the user exists in the customer data array
+      const customer = customerData.find((customer) => {
+        return customer.email === email && customer.password === password;
+      });
+
+      if (customer) {
+        alert(`Welcome back, ${customer.name}!`);
+        //  code here to redirect the user to the dashboard page
+        window.location.href = 'index.html';
+      } else {
+        alert('Invalid email or password. Please try again.');
+      }
+    });
+  </script>
+</body>
+</html>
