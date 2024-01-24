@@ -1,7 +1,6 @@
 # Basic-Banking-System
 
-<h1>#Task 1- Banking-System (#GRIPFEBRUARY23)</h1>
-<h4>The-sparks-foundation</h4>
+<h1>The-sparks-foundation</h1>
 <p>Sparks Foundation Internship Project : Basic Banking System
 A Web Application used to transfer money between multiple users (Project contains 10 dummy users).
 
