@@ -1,6 +1,5 @@
-# Basic-Banking-System
-
 <h1>Sparks Foundation Internship Project : Basic Banking System </h1>
+
 A Web Application used to transfer money between multiple users (Project contains 10 dummy users).
 
 Database contains two Tables- Users Table & Transaction Table
